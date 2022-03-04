@@ -19,19 +19,30 @@ function teste(){console.log(climateData)}
 function renderClimate(){
     let divContent = document.querySelector("main")
     divContent.innerHTML += `
-    <div>
-        <img src="http://openweathermap.org/img/wn/${climateData.weather[0].icon}@2x.png" alt="">
-        <p><strong>${toCelsius(climateData.main.temp)}</strong></p>
-        <p>Humidade: ${climateData.main.humidity}%</p>
-        <p>Sensação térmica: ${toCelsius(climateData.main.feels_like)}</p>
-        <p>Temp max: ${toCelsius(climateData.main.temp_max)}</p>
-        <p>Temp min: ${toCelsius(climateData.main.temp_min)}</p>
+    <div class= 'infosTempo'>
+        <div class='imagem'>
+            <img src="http://openweathermap.org/img/wn/${climateData.weather[0].icon}@2x.png" alt="">
+            <p><strong>${toCelsius(climateData.main.temp)}</strong></p>
+        </div>
+        <div>
+            <p>Humidade: ${climateData.main.humidity}%</p>
+            <p>Sensação térmica: ${toCelsius(climateData.main.feels_like)}</p>
+        </div>
+        <div>
+            <p>Temp max: ${toCelsius(climateData.main.temp_max)}</p>
+            <p>Temp min: ${toCelsius(climateData.main.temp_min)}</p>
+        </div>
+         
     </div>
-    <div>
-        <p><strong>${climateData.name}, ${climateData.sys.country}</strong></p>
+    <div class= 'infosAdicionais'>
+        <p class='local'><strong>${climateData.name}, ${climateData.sys.country}</strong></p>
         <p>Temp max: ${climateData.main.temp_max}</p>
         <p>${climateData.weather[0].description}</p>
     </div>
+    <div class='gif'>
+        <img src='./img/sol.gif'>
+    </div>
+    
     `
 }
 
