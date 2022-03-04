@@ -1,8 +1,5 @@
-@media (max-width: 614px) {
-
-    .participantes .usuariosAtivos{
-        height: 650px;
+@media (min-width: 614px) {
+    .infosTempo{
+        width: 90%;
     }
-
-
 }
